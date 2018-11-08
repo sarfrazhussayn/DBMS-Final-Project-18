@@ -1,0 +1,22 @@
+Details Regarding transactions being employed in the database:
+
+/*Staff creation:
+We have modeled all details related to Staff i.e. Their Staff ID, Name, Date of Registration etc. in the Staff Table, and thier
+Logon Credentials in a seperate table [Application.Credentials] hence we need a transaction to make sure that whenever a staff is
+created (either a technician or a receptionist or anyone from the admin) they need to signup using their BioData and the Signup
+details at the same time.
+Begin Transaction{
+	Create User
+	Create User Credentials
+	Commit
+}
+
+Blood Inventory Updatation:
+Whenever a pending request for a specific type of blood is attended there has to be a decrease in the inventory, to maintain the
+Consistency. Hence we have created a transaction:
+Begin Transaction{
+	Approve Blood Request
+	Update that specific blood type inventory
+	Commit
+}
+*/
