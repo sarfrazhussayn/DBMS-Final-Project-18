@@ -70,11 +70,11 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button5 = new System.Windows.Forms.Button();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -155,6 +155,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(94, 85);
             this.panel3.TabIndex = 25;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox2
             // 
@@ -563,34 +564,6 @@
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Black;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(683, 787);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(105, 33);
-            this.button5.TabIndex = 32;
-            this.button5.Text = " Submit ";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // textBox12
-            // 
-            this.textBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.ForeColor = System.Drawing.Color.White;
-            this.textBox12.Location = new System.Drawing.Point(36, 120);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(59, 23);
-            this.textBox12.TabIndex = 0;
-            // 
             // textBox13
             // 
             this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
@@ -612,6 +585,34 @@
             this.label19.Size = new System.Drawing.Size(132, 22);
             this.label19.TabIndex = 16;
             this.label19.Text = "Address Type";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Black;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(683, 787);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(105, 33);
+            this.button5.TabIndex = 32;
+            this.button5.Text = "Add";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox12
+            // 
+            this.textBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
+            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.ForeColor = System.Drawing.Color.White;
+            this.textBox12.Location = new System.Drawing.Point(36, 120);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(59, 23);
+            this.textBox12.TabIndex = 0;
             // 
             // addDonor
             // 

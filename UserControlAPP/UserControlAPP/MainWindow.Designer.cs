@@ -150,7 +150,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(150, 50);
             this.button5.TabIndex = 9;
-            this.button5.Text = "Doctors";
+            this.button5.Text = "Reporting";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.button5.UseVisualStyleBackColor = false;
             // 
