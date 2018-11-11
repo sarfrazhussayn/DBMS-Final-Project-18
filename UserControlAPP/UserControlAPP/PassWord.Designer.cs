@@ -60,6 +60,7 @@
             this.button1.Text = "X";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -166,7 +167,7 @@
             this.panel1.Controls.Add(this.textBox9);
             this.panel1.Controls.Add(this.textBox8);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Location = new System.Drawing.Point(106, 95);
+            this.panel1.Location = new System.Drawing.Point(106, 109);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(511, 142);
             this.panel1.TabIndex = 40;

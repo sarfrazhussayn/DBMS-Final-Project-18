@@ -54,7 +54,10 @@ namespace UserControlAPP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This Functionality should be coming soon :)");
+            //MessageBox.Show("This Functionality should be coming soon :)");
+
+            PassWord pass = new PassWord();
+            pass.Show();
         }
     }
 }

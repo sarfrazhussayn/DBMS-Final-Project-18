@@ -30,3 +30,6 @@ C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.csproj.CoreCompileInputs.cache
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.exe
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.pdb
+C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.PassWord.resources
+C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.addStaff.resources
+C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.staff.resources

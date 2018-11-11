@@ -27,12 +27,12 @@ namespace UserControlAPP
             sda.Fill(dt);
             donor_label.Text = dt.Rows[0][0].ToString();
             //this.people_DonorTableAdapter1.Fill(this.testDBDataSet._People_Donor);
-            SqlDataAdapter sda1 = new SqlDataAdapter("Select * from Donor", conn);
+            SqlDataAdapter sda1 = new SqlDataAdapter("select [idPeople.Donor] [ID],First_Name +' '+Last_Name [Name],CASE WHEN Gender = 1 then 'Male' WHEN Gender = 0 then 'Female' END [Gender], Blood_Group [Blood Group], CNIC, DATEDIFF(YEAR,DOB,CAST(GETDATE() as DATE)) [Age] from [People.Donor] ", conn);
             DataTable dt1 = new DataTable();
             //sda1.Fill(dt1);
             
             DataSet ds = new DataSet();
-            sda1.Fill(ds,"Donor");
+            sda1.Fill(ds,"[People.Donor]");
             dataGridView1.DataSource = ds.Tables[0];
         }
 
@@ -45,12 +45,12 @@ namespace UserControlAPP
         private void button1_Click(object sender, EventArgs e)
         {
             
-            SqlDataAdapter sda2 = new SqlDataAdapter("Select * from Donor", conn);
+            SqlDataAdapter sda2 = new SqlDataAdapter("select [idPeople.Donor] [ID],First_Name +' '+Last_Name [Name],CASE WHEN Gender = 1 then 'Male' WHEN Gender = 0 then 'Female' END [Gender], Blood_Group [Blood Group], CNIC, DATEDIFF(YEAR,DOB,CAST(GETDATE() as DATE)) [Age] from [People.Donor] ", conn);
             DataTable dt2 = new DataTable();
             //sda2.Fill(dt2);
 
             DataSet ds2 = new DataSet();
-            sda2.Fill(ds2, "Donor");
+            sda2.Fill(ds2, "[People.Donor]");
             dataGridView1.DataSource = ds2.Tables[0];
         
         }

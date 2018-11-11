@@ -48,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.donors1 = new UserControlAPP.Donors();
             this.landing_Face1 = new UserControlAPP.Landing_Face();
+            this.staff1 = new UserControlAPP.staff();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -255,7 +256,7 @@
             // 
             this.donors1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
             this.donors1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donors1.Location = new System.Drawing.Point(176, 43);
+            this.donors1.Location = new System.Drawing.Point(176, 44);
             this.donors1.Margin = new System.Windows.Forms.Padding(4);
             this.donors1.Name = "donors1";
             this.donors1.Size = new System.Drawing.Size(800, 450);
@@ -269,12 +270,21 @@
             this.landing_Face1.Size = new System.Drawing.Size(800, 450);
             this.landing_Face1.TabIndex = 23;
             // 
+            // staff1
+            // 
+            this.staff1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
+            this.staff1.Location = new System.Drawing.Point(180, 45);
+            this.staff1.Name = "staff1";
+            this.staff1.Size = new System.Drawing.Size(800, 450);
+            this.staff1.TabIndex = 27;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.Controls.Add(this.staff1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.donors1);
             this.Controls.Add(this.landing_Face1);
@@ -317,5 +327,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private staff staff1;
     }
 }

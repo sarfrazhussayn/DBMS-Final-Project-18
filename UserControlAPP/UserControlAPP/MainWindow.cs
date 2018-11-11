@@ -83,7 +83,7 @@ namespace UserControlAPP
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("button 3 works itself too");
+            staff1.BringToFront();
         }
 
         

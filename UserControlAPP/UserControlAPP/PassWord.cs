@@ -26,5 +26,10 @@ namespace UserControlAPP
         {
             MessageBox.Show("password updated");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
