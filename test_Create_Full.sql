@@ -1,4 +1,3 @@
-use TestDB
 
 CREATE TABLE [Donor.Diseases] (
   [idDonor.Diseases] VARCHAR(50)  NOT NULL   ,
@@ -238,34 +237,56 @@ CREATE INDEX IFK_Rel_14 ON [Application.Credentials] ([People.Staff_idStaff]);
 GO
 
 
-CREATE TABLE [Transaction.Donation] (
+CREATE TABLE [Donation] (
   [idTransaction.Donation] INTEGER  NOT NULL   IDENTITY ,
+  [Depository.Main_Depository_idDepository] INTEGER  NOT NULL  ,
+  [Deposit.Deposit_Category_idDeposit.Deposit_Cat] Varchar(50)  NOT NULL  ,
+  [Deposit.Blood_Type_idBlood_TYPE] INTEGER  NOT NULL  ,
   [People.Donor_idPeople.Donor] INTEGER  NOT NULL  ,
   [People.Staff_idStaff] INTEGER  NOT NULL  ,
-  IsApproved BIT  NOT NULL    ,
-PRIMARY KEY([idTransaction.Donation])    ,
+  IsApproved BIT  NOT NULL  ,
+  Expiry DATE  NOT NULL  ,
+  Donation_Date DATE  NOT NULL    ,
+PRIMARY KEY([idTransaction.Donation])          ,
   FOREIGN KEY([People.Donor_idPeople.Donor])
     REFERENCES [People.Donor]([idPeople.Donor]),
   FOREIGN KEY([People.Staff_idStaff])
-    REFERENCES [People.Staff](idStaff));
+    REFERENCES [People.Staff](idStaff),
+  FOREIGN KEY([Deposit.Deposit_Category_idDeposit.Deposit_Cat])
+    REFERENCES [Deposit.Deposit_Category]([idDeposit.Deposit_Cat]),
+  FOREIGN KEY([Depository.Main_Depository_idDepository])
+    REFERENCES [Depository.Main_Depository](idDepository));
 GO
 
 
-CREATE INDEX [Transaction.Donation_FKIndex1] ON [Transaction.Donation] ([People.Donor_idPeople.Donor]);
+CREATE INDEX [Donation_FKIndex1] ON [Donation] ([People.Donor_idPeople.Donor]);
 GO
-CREATE INDEX [Transaction.Donation_FKIndex2] ON [Transaction.Donation] ([People.Staff_idStaff]);
+CREATE INDEX [Donation_FKIndex2] ON [Donation] ([People.Staff_idStaff]);
+GO
+CREATE INDEX [Donation_FKIndex3] ON [Donation] ([Deposit.Blood_Type_idBlood_TYPE]);
+GO
+CREATE INDEX [Donation_FKIndex4] ON [Donation] ([Deposit.Deposit_Category_idDeposit.Deposit_Cat]);
+GO
+CREATE INDEX [Donation_FKIndex5] ON [Donation] ([Depository.Main_Depository_idDepository]);
 GO
 
 
-CREATE INDEX IFK_Rel_05 ON [Transaction.Donation] ([People.Donor_idPeople.Donor]);
+CREATE INDEX IFK_Rel_05 ON [Donation] ([People.Donor_idPeople.Donor]);
 GO
-CREATE INDEX IFK_Rel_09 ON [Transaction.Donation] ([People.Staff_idStaff]);
+CREATE INDEX IFK_Rel_09 ON [Donation] ([People.Staff_idStaff]);
 GO
+CREATE INDEX IFK_Rel_21 ON [Donation] ([Deposit.Blood_Type_idBlood_TYPE]);
+GO
+CREATE INDEX IFK_Rel_22 ON [Donation] ([Deposit.Deposit_Category_idDeposit.Deposit_Cat]);
+GO
+CREATE INDEX IFK_Rel_23 ON [Donation] ([Depository.Main_Depository_idDepository]);
+GO
+
 
 
 CREATE TABLE [Depository.Deposit] (
   idDepost INTEGER  NOT NULL   IDENTITY ,
-  [Transaction.Donation_idTransaction.Donation] INTEGER  NOT NULL  ,
+  [Donation_idTransaction.Donation] INTEGER  NOT NULL  ,
   [People.Staff_idStaff] INTEGER  NOT NULL  ,
   [Deposit.Blood_Type_idBlood_TYPE] VARCHAR(50)  NOT NULL  ,
   [Deposit.Deposit_Category_idDeposit.Deposit_Cat] VARCHAR(50)  NOT NULL  ,
@@ -277,8 +298,8 @@ PRIMARY KEY(idDepost)          ,
     REFERENCES [Depository.Main_Depository](idDepository),
   FOREIGN KEY([Deposit.Blood_Type_idBlood_TYPE])
     REFERENCES [Deposit.Blood_Type](idBlood_TYPE),
-  FOREIGN KEY([Transaction.Donation_idTransaction.Donation])
-    REFERENCES [Transaction.Donation]([idTransaction.Donation]),
+  FOREIGN KEY([Donation_idTransaction.Donation])
+    REFERENCES [Donation]([idTransaction.Donation]),
   FOREIGN KEY([Deposit.Deposit_Category_idDeposit.Deposit_Cat])
     REFERENCES [Deposit.Deposit_Category]([idDeposit.Deposit_Cat]),
   FOREIGN KEY([People.Staff_idStaff])
@@ -288,7 +309,7 @@ GO
 
 CREATE INDEX Depost_FKIndex1 ON [Depository.Deposit] ([Depository.Main_Depository_idDepository]);
 GO
-CREATE INDEX [Depository.Deposit_FKIndex3] ON [Depository.Deposit] ([Transaction.Donation_idTransaction.Donation]);
+CREATE INDEX [Depository.Deposit_FKIndex3] ON [Depository.Deposit] ([Donation_idTransaction.Donation]);
 GO
 CREATE INDEX [Depository.Deposit_FKIndex4] ON [Depository.Deposit] ([Deposit.Deposit_Category_idDeposit.Deposit_Cat]);
 GO
@@ -302,7 +323,7 @@ CREATE INDEX IFK_Rel_03 ON [Depository.Deposit] ([Depository.Main_Depository_idD
 GO
 CREATE INDEX IFK_Rel_04 ON [Depository.Deposit] ([Deposit.Blood_Type_idBlood_TYPE]);
 GO
-CREATE INDEX IFK_Rel_06 ON [Depository.Deposit] ([Transaction.Donation_idTransaction.Donation]);
+CREATE INDEX IFK_Rel_06 ON [Depository.Deposit] ([Donation_idTransaction.Donation]);
 GO
 CREATE INDEX IFK_Rel_08 ON [Depository.Deposit] ([Deposit.Deposit_Category_idDeposit.Deposit_Cat]);
 GO
