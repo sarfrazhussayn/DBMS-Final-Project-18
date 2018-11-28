@@ -147,6 +147,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(277, 23);
             this.textBox8.TabIndex = 34;
+            this.textBox8.UseSystemPasswordChar = true;
             // 
             // textBox6
             // 
@@ -158,6 +159,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(277, 23);
             this.textBox6.TabIndex = 33;
+            this.textBox6.UseSystemPasswordChar = true;
             // 
             // panel1
             // 
@@ -204,6 +206,7 @@
             this.Name = "PassWord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PassWord";
+            this.Load += new System.EventHandler(this.PassWord_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);

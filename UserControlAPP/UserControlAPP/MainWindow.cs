@@ -86,6 +86,20 @@ namespace UserControlAPP
             staff1.BringToFront();
         }
 
-        
+        private void staff1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            requests1.BringToFront();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PassWord pass = new PassWord();
+            pass.Show();
+        }
     }
 }

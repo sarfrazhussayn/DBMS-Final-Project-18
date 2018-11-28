@@ -17,7 +17,6 @@ E:\source\repos\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.Donations
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\bin\Debug\UserControlAPP.exe.config
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\bin\Debug\UserControlAPP.exe
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\bin\Debug\UserControlAPP.pdb
-C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.csprojAssemblyReference.cache
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.addDonor.resources
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.Donations_Face.resources
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.Donors.resources
@@ -33,3 +32,5 @@ C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.PassWord.resources
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.addStaff.resources
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.staff.resources
+C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.csprojAssemblyReference.cache
+C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.requests.resources

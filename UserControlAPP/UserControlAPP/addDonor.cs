@@ -20,11 +20,13 @@ namespace UserControlAPP
         {
             InitializeComponent();
         }
-
+        int gender;
         private void addDonor_Load(object sender, EventArgs e)
         {
-            idfunction("Select Max([idPeople.Donor]) from [People.Donor]");
-            textBox12.Enabled = false;
+            //idfunction("Select Max([idPeople.Donor]) from [People.Donor]");
+            //textBox12.Enabled = false;
+            gender = 1;
+            textBox12.Text = gender.ToString();
         }
         
         public void idfunction(string retrieveid)
@@ -41,7 +43,7 @@ namespace UserControlAPP
                 while (sda.Read())
                 {
                     double value = Convert.ToDouble(sda[0].ToString()) + 1;
-                    textBox12.Text = value.ToString();
+                    //textBox12.Text = value.ToString();
                 }
             }
             catch (Exception ex)
@@ -62,36 +64,62 @@ namespace UserControlAPP
 
         private void button5_Click(object sender, EventArgs e)
         {
-            /*try
+            string count;
+            try
             {
                 SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
-                conn.Open();
-                SqlCommand command1 = new SqlCommand("Insert into Doctor([Doctor_ID],[Name],[CNIC_or_Password],[Contact#],[Email],[Blood_Group],[Age],[Gender],[Room_ID],[Doc_Fees_Pkr],[Doc_Day1],[Doc_Day2]) values(@docid,@name,@cnic,@contact,@email,@blood,@age,@gender,@roomid,@fees,@day1,@day2)", conn);
-                command1.Parameters.AddWithValue("@docid", textBox1.Text); ; command1.Parameters.AddWithValue("@name", textBox2.Text); command1.Parameters.AddWithValue("@cnic", textBox3.Text); command1.Parameters.AddWithValue("@contact", textBox4.Text); command1.Parameters.AddWithValue("@email", textBox5.Text); command1.Parameters.AddWithValue("@blood", textBox6.Text);
-                command1.Parameters.AddWithValue("@age", textBox7.Text); command1.Parameters.AddWithValue("@gender", comboBox1.Text); command1.Parameters.AddWithValue("@roomid", textBox9.Text); command1.Parameters.AddWithValue("@fees", textBox10.Text);
-                command1.Parameters.AddWithValue("@day1", comboBox2.Text);
-                command1.Parameters.AddWithValue("@day2", comboBox3.Text);
-                command1.ExecuteNonQuery();
-                command1.Parameters.Clear();
-                MessageBox.Show("Table1 entry");
-                SqlCommand command2 = new SqlCommand("INSERT INTO Doc_Further_Details ([Doctor_ID],[Doc_Speacialization],[Doc_Research]) values(@docid,@specialization,@research)", conn);
-                command2.Parameters.AddWithValue("@docid", textBox1.Text);
-                command2.Parameters.AddWithValue("@specialization", textBox12.Text);
-                command2.Parameters.AddWithValue("@research", richTextBox1.Text);
-                command2.ExecuteNonQuery();
-                command2.Parameters.Clear();
-                MessageBox.Show("Table 2 Entry");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
+                SqlDataAdapter check = new SqlDataAdapter("select COUNT(*) from [People.Donor] where CNIC = '"+textBox5.Text+"'", conn);
+                DataTable dt = new DataTable();
+                check.Fill(dt);
+                count = dt.Rows[0][0].ToString();
+                if (Convert.ToInt32(count)==0)
+                {
+                    SqlCommand add = new SqlCommand("begin transaction declare @donorId int; insert into [People.Donor] (Branch_idBranch,First_Name,Last_Name,DOB,[Date of Registration],CNIC,Gender,Blood_Group) values (2,'" + this.textBox9.Text + "','" + this.textBox6.Text + "','" + this.maskedTextBox1.Text + "','" + this.maskedTextBox2.Text + "','" + this.textBox5.Text + "','" + gender + "','" + this.comboBox4.Text + "'); select @donorId = SCOPE_IDENTITY(); insert into [People.Address] ([People.Donor_idPeople.Donor],Address_Line1,Address_Line2,Address_Line3,Address_Type,City,Zip_PostCode) values (@donorId,'" + this.textBox2.Text + "','" + this.textBox1.Text + "','" + this.textBox4.Text + "','" + this.comboBox5.Text + "','" + this.textBox7.Text + "','" + this.textBox3.Text + "'); insert into [Donor.Phone] ([People.Donor_idPeople.Donor],Phone_No,Phone_Type) values (@donorId,'" + this.textBox11.Text + "','" + this.comboBox2.Text + "');commit", conn);
+                    SqlDataReader reader;
+                    conn.Open();
+                    reader = add.ExecuteReader();
+                    MessageBox.Show("Record Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    while (reader.Read())
+                    {
 
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("CNIC error already in the Database");
+                }
+            }
+
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+
+            }
+            
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.Text == "Male")
+            {
+                gender = 1;
+                textBox12.Text = "Male";
+            }
+            else if (comboBox1.Text == "Female")
+            {
+                gender = 0;
+                textBox12.Text = "Female";
+            }
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+            this.Text = gender.ToString();
         }
     }
 }

@@ -121,7 +121,51 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="button4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAABtBJREFUeF7tnWuIFWUYx72miGhmliUIdrGiCAkNgyQq/WBSYF+CQMQPRTcigkiR
@@ -389,4 +433,7 @@
         rkJggg==
 </value>
   </data>
+  <metadata name="deposit_Blood_TypeTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>104, 17</value>
+  </metadata>
 </root>

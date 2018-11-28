@@ -118,6 +118,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="requests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="requests.Designer.cs">
+      <DependentUpon>requests.cs</DependentUpon>
+    </Compile>
     <Compile Include="staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +171,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="requests.resx">
+      <DependentUpon>requests.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="staff.resx">
       <DependentUpon>staff.cs</DependentUpon>
     </EmbeddedResource>
