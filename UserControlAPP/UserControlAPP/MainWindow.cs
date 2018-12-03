@@ -45,6 +45,7 @@ namespace UserControlAPP
             sda.Fill(dt);
             label2.Text = dt.Rows[0][0].ToString() + ", " + dt.Rows[0][1].ToString();
             branchid = dt.Rows[0][0].ToString();
+            panel4.Height = button3.Height;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -59,14 +60,15 @@ namespace UserControlAPP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panel2.Height = button2.Height;
+            panel4.Height = button2.Height;
+            panel4.Top = button2.Top;
             donors1.BringToFront();
             //MessageBox.Show("Working Button2");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            panel2.Height = button3.Height;
+            //panel2.Height = button3.Height;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -77,13 +79,14 @@ namespace UserControlAPP
         private void button4_Click_1(object sender, EventArgs e)
         {
             landing_Face1.BringToFront();
-            panel2.Height = button4.Height;
+            
             //MessageBox.Show("Working Button 4");
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            staff1.BringToFront();
+            panel4.Height = button3.Height;
+            panel4.Top = button3.Top;
         }
 
         private void staff1_Load(object sender, EventArgs e)
@@ -93,6 +96,8 @@ namespace UserControlAPP
 
         private void button7_Click(object sender, EventArgs e)
         {
+            panel4.Height = button7.Height;
+            panel4.Top = button7.Top;
             requests1.BringToFront();
         }
 
@@ -100,6 +105,22 @@ namespace UserControlAPP
         {
             PassWord pass = new PassWord();
             pass.Show();
+        }
+
+        private void button8_click(object sender, EventArgs e)
+        {
+            staff1.BringToFront();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel4.Height = button5.Height;
+            panel4.Top = button5.Top;
         }
     }
 }

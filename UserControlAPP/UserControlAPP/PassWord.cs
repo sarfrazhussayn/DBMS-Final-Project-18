@@ -37,20 +37,28 @@ namespace UserControlAPP
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            try
+            if (textBox6.Text != "" && textBox8.Text!= "" && textBox9.Text!="")
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
-                conn.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("update [Application.Credentials] set Hashed_Password = '" + GetMD5(this.textBox8.Text) + "' where [User_name] = '" + this.textBox9.Text + "' and Hashed_Password = '" + GetMD5(this.textBox6.Text) + "'", conn);
-                sda.SelectCommand.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Successfully Updated");
+                try
+                {
+                    SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
+                    conn.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter("update [Application.Credentials] set Hashed_Password = '" + GetMD5(this.textBox8.Text) + "' where [User_name] = '" + this.textBox9.Text + "' and Hashed_Password = '" + GetMD5(this.textBox6.Text) + "'", conn);
+                    sda.SelectCommand.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Successfully Updated");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error: Validating Inputs");
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
