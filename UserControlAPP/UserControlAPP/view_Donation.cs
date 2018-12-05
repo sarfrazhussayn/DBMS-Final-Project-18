@@ -48,5 +48,10 @@ namespace UserControlAPP
             addDonation donate = new addDonation();
             donate.Show();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
