@@ -34,3 +34,5 @@ C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.staff.resources
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.csprojAssemblyReference.cache
 C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.requests.resources
+C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.view_Donation.resources
+C:\Users\UN\Documents\GitHub\DBMS-Final-Project-18\UserControlAPP\UserControlAPP\obj\Debug\UserControlAPP.addDonation.resources

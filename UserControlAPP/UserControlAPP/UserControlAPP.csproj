@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addDonation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addDonation.Designer.cs">
+      <DependentUpon>addDonation.cs</DependentUpon>
+    </Compile>
     <Compile Include="addDonor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     </Compile>
     <Compile Include="addStaff.Designer.cs">
       <DependentUpon>addStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view_Donation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view_Donation.Designer.cs">
+      <DependentUpon>view_Donation.cs</DependentUpon>
     </Compile>
     <Compile Include="Donations_Face.cs">
       <SubType>UserControl</SubType>
@@ -135,11 +147,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDBDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addDonation.resx">
+      <DependentUpon>addDonation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addDonor.resx">
       <DependentUpon>addDonor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addStaff.resx">
       <DependentUpon>addStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_Donation.resx">
+      <DependentUpon>view_Donation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Donations_Face.resx">
       <DependentUpon>Donations_Face.cs</DependentUpon>

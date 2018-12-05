@@ -46,6 +46,7 @@ namespace UserControlAPP
             label2.Text = dt.Rows[0][0].ToString() + ", " + dt.Rows[0][1].ToString();
             branchid = dt.Rows[0][0].ToString();
             panel4.Height = button3.Height;
+            panel4.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -85,8 +86,10 @@ namespace UserControlAPP
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            panel4.Visible = true;
             panel4.Height = button3.Height;
             panel4.Top = button3.Top;
+            view_Donation1.BringToFront();
         }
 
         private void staff1_Load(object sender, EventArgs e)
@@ -110,6 +113,7 @@ namespace UserControlAPP
         private void button8_click(object sender, EventArgs e)
         {
             staff1.BringToFront();
+            panel4.Visible = false;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
