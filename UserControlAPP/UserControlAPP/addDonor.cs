@@ -26,7 +26,7 @@ namespace UserControlAPP
             //idfunction("Select Max([idPeople.Donor]) from [People.Donor]");
             //textBox12.Enabled = false;
             gender = 1;
-            textBox12.Text = gender.ToString();
+            //textBox12.Text = gender.ToString();
         }
         
         public void idfunction(string retrieveid)
@@ -108,12 +108,12 @@ namespace UserControlAPP
             if(comboBox1.Text == "Male")
             {
                 gender = 1;
-                textBox12.Text = "Male";
+                //textBox12.Text = "Male";
             }
             else if (comboBox1.Text == "Female")
             {
                 gender = 0;
-                textBox12.Text = "Female";
+                //textBox12.Text = "Female";
             }
         }
 

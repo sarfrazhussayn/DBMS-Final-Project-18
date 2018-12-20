@@ -50,11 +50,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.deposit_Blood_TypeTableAdapter1 = new UserControlAPP.TestDBDataSetTableAdapters.Deposit_Blood_TypeTableAdapter();
-            this.view_Donation1 = new UserControlAPP.view_Donation();
             this.requests1 = new UserControlAPP.requests();
             this.staff1 = new UserControlAPP.staff();
             this.donors1 = new UserControlAPP.Donors();
             this.landing_Face1 = new UserControlAPP.Landing_Face();
+            this.view_Donation1 = new UserControlAPP.view_Donation();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -305,6 +305,7 @@
             this.label2.Size = new System.Drawing.Size(62, 21);
             this.label2.TabIndex = 25;
             this.label2.Text = "Admin";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -320,14 +321,6 @@
             // deposit_Blood_TypeTableAdapter1
             // 
             this.deposit_Blood_TypeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // view_Donation1
-            // 
-            this.view_Donation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
-            this.view_Donation1.Location = new System.Drawing.Point(180, 44);
-            this.view_Donation1.Name = "view_Donation1";
-            this.view_Donation1.Size = new System.Drawing.Size(808, 450);
-            this.view_Donation1.TabIndex = 29;
             // 
             // requests1
             // 
@@ -350,7 +343,7 @@
             // 
             this.donors1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
             this.donors1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donors1.Location = new System.Drawing.Point(176, 44);
+            this.donors1.Location = new System.Drawing.Point(183, 47);
             this.donors1.Margin = new System.Windows.Forms.Padding(4);
             this.donors1.Name = "donors1";
             this.donors1.Size = new System.Drawing.Size(800, 450);
@@ -359,10 +352,18 @@
             // landing_Face1
             // 
             this.landing_Face1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
-            this.landing_Face1.Location = new System.Drawing.Point(176, 41);
+            this.landing_Face1.Location = new System.Drawing.Point(188, 42);
             this.landing_Face1.Name = "landing_Face1";
             this.landing_Face1.Size = new System.Drawing.Size(800, 450);
             this.landing_Face1.TabIndex = 23;
+            // 
+            // view_Donation1
+            // 
+            this.view_Donation1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
+            this.view_Donation1.Location = new System.Drawing.Point(183, 44);
+            this.view_Donation1.Name = "view_Donation1";
+            this.view_Donation1.Size = new System.Drawing.Size(800, 450);
+            this.view_Donation1.TabIndex = 29;
             // 
             // MainWindow
             // 
@@ -370,7 +371,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1000, 500);
-            this.Controls.Add(this.staff1);
+            this.Controls.Add(this.view_Donation1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.donors1);
             this.Controls.Add(this.landing_Face1);
@@ -379,8 +380,8 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.view_Donation1);
             this.Controls.Add(this.requests1);
+            this.Controls.Add(this.staff1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

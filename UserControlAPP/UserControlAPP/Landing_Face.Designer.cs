@@ -84,9 +84,9 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(79, 221);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 22);
+            this.label9.Size = new System.Drawing.Size(92, 22);
             this.label9.TabIndex = 18;
-            this.label9.Text = "Doctors";
+            this.label9.Text = "Requests";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label6

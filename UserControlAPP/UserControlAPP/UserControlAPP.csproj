@@ -74,11 +74,23 @@
     <Compile Include="addDonor.Designer.cs">
       <DependentUpon>addDonor.cs</DependentUpon>
     </Compile>
+    <Compile Include="addRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addRequest.Designer.cs">
+      <DependentUpon>addRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="addStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="addStaff.Designer.cs">
       <DependentUpon>addStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="request_fulfill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="request_fulfill.Designer.cs">
+      <DependentUpon>request_fulfill.cs</DependentUpon>
     </Compile>
     <Compile Include="view_Donation.cs">
       <SubType>UserControl</SubType>
@@ -153,8 +165,14 @@
     <EmbeddedResource Include="addDonor.resx">
       <DependentUpon>addDonor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addRequest.resx">
+      <DependentUpon>addRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addStaff.resx">
       <DependentUpon>addStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="request_fulfill.resx">
+      <DependentUpon>request_fulfill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view_Donation.resx">
       <DependentUpon>view_Donation.cs</DependentUpon>

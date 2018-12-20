@@ -14,6 +14,7 @@ namespace UserControlAPP
     public partial class MainWindow : Form
     {
         public string branchid;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,7 +33,6 @@ namespace UserControlAPP
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            
             timer1.Start();
             timer1.Interval = 1000;
             landing_Face1.BringToFront();
@@ -40,10 +40,10 @@ namespace UserControlAPP
 
 
             SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
-            SqlDataAdapter sda = new SqlDataAdapter("select p.Branch_idBranch,b.Branch_Name from [People.Staff] p inner join Branch b on b.idBranch = p.Branch_idBranch ", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("select b.idBranch,b.Branch_Name from [Application.Credentials] c inner join[People.Staff] s on c.[People.Staff_idStaff] = s.idStaff inner join[Branch] b on b.idBranch = s.Branch_idBranch where c.[User_name] = '"+show_user+"'  ", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            label2.Text = dt.Rows[0][0].ToString() + ", " + dt.Rows[0][1].ToString();
+            label2.Text = dt.Rows[0][0].ToString() + " | " + dt.Rows[0][1].ToString();
             branchid = dt.Rows[0][0].ToString();
             panel4.Height = button3.Height;
             panel4.Visible = false;
@@ -126,5 +126,12 @@ namespace UserControlAPP
             panel4.Height = button5.Height;
             panel4.Top = button5.Top;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+    
+
 }
