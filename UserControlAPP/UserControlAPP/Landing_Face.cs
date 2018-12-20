@@ -23,7 +23,7 @@ namespace UserControlAPP
             
 
             //Total Donors
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [People.Donor] ", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [dbo].[Donor] ", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             label3.Text = dt.Rows[0][0].ToString();
@@ -49,10 +49,10 @@ namespace UserControlAPP
 
             //Total Requests in the database
 
-            SqlDataAdapter sda4 = new SqlDataAdapter("SELECT COUNT(*) FROM [Request] ", conn);
+            SqlDataAdapter sda4 = new SqlDataAdapter("select SUM(Quantity) from [Request] Where IsCompleted = 0 ", conn);
             DataTable dt4 = new DataTable();
             sda4.Fill(dt4);
-            label3.Text = dt4.Rows[0][0].ToString();
+            label8.Text = dt4.Rows[0][0].ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)

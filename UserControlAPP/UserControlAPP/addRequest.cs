@@ -22,13 +22,13 @@ namespace UserControlAPP
         {
             this.Close();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
+        
         private void button2_Click(object sender, EventArgs e)
         {
             string count;
             try
             {
-
+                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
                 SqlDataAdapter check = new SqlDataAdapter("select COUNT(*) from [Donation_final] where [Deposit.Blood_Type_idBlood_TYPE] = '"+comboBox1.Text+"' and Expiry>GETDATE() and IsDonated = 0", conn);
                 DataTable dt = new DataTable();
                 check.Fill(dt);
@@ -67,7 +67,7 @@ namespace UserControlAPP
         {
 
         }
-
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -108,6 +108,11 @@ namespace UserControlAPP
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            textBox9.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
         }
     }
 }
