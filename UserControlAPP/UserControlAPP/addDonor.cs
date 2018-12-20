@@ -28,10 +28,10 @@ namespace UserControlAPP
             gender = 1;
             //textBox12.Text = gender.ToString();
         }
-        
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
         public void idfunction(string retrieveid)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
+            
             try
             {
                 if (conn.State == ConnectionState.Closed)
@@ -67,7 +67,7 @@ namespace UserControlAPP
             string count;
             try
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
+                //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
                 SqlDataAdapter check = new SqlDataAdapter("select COUNT(*) from [People.Donor] where CNIC = '"+textBox5.Text+"'", conn);
                 DataTable dt = new DataTable();
                 check.Fill(dt);

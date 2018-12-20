@@ -18,7 +18,7 @@ namespace UserControlAPP
         {
             InitializeComponent();
         }
-
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
         private void label9_Click(object sender, EventArgs e)
         {
 
@@ -41,7 +41,7 @@ namespace UserControlAPP
             {
                 try
                 {
-                    SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
+                    
                     conn.Open();
                     SqlDataAdapter sda = new SqlDataAdapter("update [Application.Credentials] set Hashed_Password = '" + GetMD5(this.textBox8.Text) + "' where [User_name] = '" + this.textBox9.Text + "' and Hashed_Password = '" + GetMD5(this.textBox6.Text) + "'", conn);
                     sda.SelectCommand.ExecuteNonQuery();

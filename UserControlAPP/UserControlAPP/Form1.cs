@@ -70,14 +70,14 @@ namespace UserControlAPP
         {
 
         }
-
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
         private void button1_Click_1(object sender, EventArgs e)
         {
             
             USER_NAME user = new USER_NAME(this.textBox1.Text);
             try
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
+                
                 SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [Application.Credentials] WHERE User_name = '" + textBox1.Text + "' and Hashed_Password = '" + GetMD5(textBox2.Text) + "'", conn);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);

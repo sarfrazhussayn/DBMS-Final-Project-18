@@ -17,10 +17,10 @@ namespace UserControlAPP
         {
             InitializeComponent();
         }
-
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
         private void Landing_Face_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
+            
 
             //Total Donors
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [People.Donor] ", conn);

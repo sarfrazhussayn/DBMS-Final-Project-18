@@ -16,5 +16,10 @@ namespace UserControlAPP
         {
             InitializeComponent();
         }
+
+        private void Donations_Face_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace UserControlAPP
             }
             return str.ToString();
         }
-
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
         private void button5_Click(object sender, EventArgs e)
         {
             if(this.textBox1.Text!="" && this.textBox2.Text != "" && this.textBox3.Text != "" && this.textBox5.Text != "" && this.textBox6.Text != "" && this.textBox9.Text != "" && this.textBox11.Text != "" && this.maskedTextBox1.Text != "" && this.maskedTextBox2.Text != "" && this.comboBox1.Text != "" && this.comboBox2.Text != "" && this.comboBox3.Text != "" && this.comboBox2.Text != "")
@@ -50,7 +50,6 @@ namespace UserControlAPP
                 try
                 {
                     string pass = GetMD5(this.textBox1.Text);
-                    SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
                     SqlCommand add = new SqlCommand("begin transaction declare @staffId int; insert into [People.Staff] (Branch_idBranch,[People.Staff_Category_idPeople.Staff_Category],First_Name,Last_Name,DOB,[Date_of_Joining],IsActive,CNIC,Gender,Salary,Remarks) values ('" + this.comboBox4.Text + "','" + this.comboBox3.Text + "','" + this.textBox9.Text + "','" + this.textBox6.Text + "','" + this.maskedTextBox1.Text + "','" + this.maskedTextBox2.Text + "','" + Working + "','" + this.textBox5.Text + "','" + this.comboBox1.Text + "','" + this.textBox3.Text + "','" + this.richTextBox1.Text + "');select @staffId = SCOPE_IDENTITY(); insert into [Application.Credentials] ([People.Staff_idStaff],[User_name],Hashed_Password,DateCreated) values (@staffId,'" + this.textBox2.Text + "','" + pass + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "');commit", conn);
 
                     SqlDataReader reader;

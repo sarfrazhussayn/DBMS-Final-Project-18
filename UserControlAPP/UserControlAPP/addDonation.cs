@@ -86,7 +86,7 @@ namespace UserControlAPP
             {
                 try
                 {
-                    SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
+                    //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-RHD68V9\SQLEXPRESS;Initial Catalog=TestDB;Persist Security Info=True;User ID=sa;Password=abc123abc");
                     SqlCommand add = new SqlCommand("begin transaction insert into Donation_final([Depository.Main_Depository_idDepository],[Deposit.Deposit_Category_idDeposit.Deposit_Cat],[Deposit.Blood_Type_idBlood_TYPE],[People.Donor_idPeople.Donor],[People.Staff_idStaff], IsApproved, Expiry, Donation_Date, IsDonated, IsExpired) Values(1, '" + comboBox1.Text + "', '" + textBox3.Text + "', '" + textBox2.Text + "', 3, '" + approval + "', GETDATE() + 20, GETDATE(), 0, 0)commit", conn);
 
                     SqlDataReader reader;
